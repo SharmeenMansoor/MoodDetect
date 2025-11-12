@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emotion Detection</title>
+</head>
+<body style="font-family:Arial; text-align:center; margin-top:50px;">
+  <h2>😊 Upload an image to check if the person is happy or sad</h2>
+  <form action="/predict" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" required>
+    <input type="submit" value="Analyze">
+  </form>
+  {% if result %}
+    <h3>{{ result }}</h3>
+    <img src="{{ image_url }}" width="300">
+  {% endif %}
+</body>
+</html>
